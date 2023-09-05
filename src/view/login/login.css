@@ -16,3 +16,14 @@
     color: #fff;
     
 }
+
+.opcoes-login a{
+    text-decoration: none;
+    color: #fff;
+    transition: .3s ease-in-out;
+}
+
+.opcoes-login a:hover{
+    text-decoration: none;
+    color: #f21667;
+}
