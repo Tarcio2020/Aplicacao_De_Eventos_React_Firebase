@@ -85,3 +85,9 @@ Se gerar algum erro na execução devemos criar um arquivo de configuração
 .env
 
     SKIP_PREFLIGHT_CHECK=true
+
+Instalção do Firebase
+
+    npm install firebase
+
+
