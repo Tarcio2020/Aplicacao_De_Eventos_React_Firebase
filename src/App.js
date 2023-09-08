@@ -1,9 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+/*PÁGINAS*/
+import Login from './view/login';
+import NovoUsuario from './view/usuario-novo';
 
 function App() {
   return (
-  <h1>olá</h1>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Login />} />
+        <Route path='/NovoUsuario' element={<NovoUsuario />} />
+      </Routes>
+    </Router>
   )
 }
 
