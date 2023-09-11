@@ -4,13 +4,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 /*PÁGINAS*/
 import Login from './view/login';
 import NovoUsuario from './view/usuario-novo';
+import Home from './view/home';
+
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path='/' element={<Home />} />
         <Route path='/NovoUsuario' element={<NovoUsuario />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </Router>
   )
