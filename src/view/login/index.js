@@ -23,7 +23,7 @@ function Login() {
     return(
         <div className='login-content d-flex align-items-center'>
             <form className='form-signin mx-auto'>
-                <h1 class="h3 mb-3 fw-normal text-white font-weigth-bold text-center">Login</h1>
+                <h1 class="h3 mb-3 fw-normal text-white font-weigth-bold text-center"><i class="fa-regular fa-user"></i> Login</h1>
                 <input onChange={(e) => setEmail(e.target.value)} type="email" class="form-control my-2" id="floatingInput" placeholder="E-mail"/>             
                 <input onChange={(e) => setSenha(e.target.value)} type="password" class="form-control my-2" id="floatingPassword" placeholder="Senha"/>
                 <button onClick={logar} class="btn btn-login w-100 py-2" type="button">Entrar</button>
