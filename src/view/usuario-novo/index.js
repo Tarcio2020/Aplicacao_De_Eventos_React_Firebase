@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import firebase from '../../config/firebase';
 import 'firebase/auth';
 import './usuario-novo.css';
+import Navbar from '../../components/navbar';
 
 function NovoUsuario() {
 
@@ -56,26 +57,29 @@ function NovoUsuario() {
     }
 
     return(
-        <div className='form-cadastro'>
-            <form className='text-center form-login mx-auto mt-5'>
-                <h1 className='h3 mb-3 text-black font-weight-bold'>Cadastro</h1>
-               
-                <input onChange={(e) => setEmail(e.target.value)} type='email' className='form-control my-2' placeholder='E-mail'/>
-                <input onChange={(e) => setSenha(e.target.value)} type='password' className='form-control my-2' placeholder='Senha'/>
+        <>
+            <Navbar/>
+            <div className='form-cadastro'>
+                <form className='text-center form-login mx-auto mt-5'>
+                    <h1 className='h3 mb-3 text-black font-weight-bold'>Cadastro</h1>
                 
-                {
-                    carregando ? <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
-                    :<button onClick={cadastrar} type='button' className='btn btn-lg btn-block mt-3 mb-5 btn-cadastro'>Cadastrar</button>
+                    <input onChange={(e) => setEmail(e.target.value)} type='email' className='form-control my-2' placeholder='E-mail'/>
+                    <input onChange={(e) => setSenha(e.target.value)} type='password' className='form-control my-2' placeholder='Senha'/>
                     
-                }
+                    {
+                        carregando ? <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                        :<button onClick={cadastrar} type='button' className='btn btn-lg btn-block mt-3 mb-5 btn-cadastro'>Cadastrar</button>
+                        
+                    }
+                    
+                    <div className='msg-login text-black text-center my-5'>
+                            {msgTipo === 'sucesso' && <span><strong>Usuário cadastrado com sucesso</strong>&#128526;</span>}
+                            {msgTipo === 'erro' && <span><strong>Ops!</strong> {msg}</span>}
+                    </div>
                 
-                <div className='msg-login text-black text-center my-5'>
-                        {msgTipo === 'sucesso' && <span><strong>Usuário cadastrado com sucesso</strong>&#128526;</span>}
-                        {msgTipo === 'erro' && <span><strong>Ops!</strong> {msg}</span>}
-                </div>
-            
-            </form>
-        </div>
+                </form>
+            </div>
+        </>
     )
 }
 
