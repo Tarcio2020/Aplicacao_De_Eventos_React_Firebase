@@ -13,8 +13,17 @@ function Navbar() {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item"><Link className="nav-link" aria-current="page" to='/'>Home</Link></li>
+                   
+                   <>
                     <li className="nav-item"><Link className="nav-link" aria-current="page" to='/NovoUsuario'>Cadastrar</Link></li>
                     <li className="nav-item"><Link className="nav-link" aria-current="page" to='/login'>Login</Link></li>
+                   </>
+
+                   <>
+                    <li className="nav-item"><Link className="nav-link" aria-current="page" to='/NovoUsuario'>Publicar Eventos</Link></li>
+                    <li className="nav-item"><Link className="nav-link" aria-current="page" to='/NovoUsuario'>Meus Eventos</Link></li>
+                    <li className="nav-item"><Link className="nav-link" aria-current="page" to='/login'>Sair</Link></li>
+                   </>
                 </ul>
             </div>
         </nav>    
