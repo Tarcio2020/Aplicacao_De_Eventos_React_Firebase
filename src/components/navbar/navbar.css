@@ -7,6 +7,6 @@
     transition: .3s ease-in;
 }
 
-.nav-link a:hover {
+.nav-link:hover {
     color: #f21667; 
 }

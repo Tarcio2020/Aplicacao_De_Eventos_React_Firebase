@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './view/login';
 import NovoUsuario from './view/usuario-novo';
 import Home from './view/home';
+import UsuarioRecuperarSenha from './view/recuperarar-senha/';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/NovoUsuario' element={<NovoUsuario />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/usuariorecuperarsenha' element={<UsuarioRecuperarSenha />} />
       </Routes>
     </Router>
   )
