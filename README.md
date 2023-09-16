@@ -90,4 +90,8 @@ Instalção do Firebase
 
     npm install firebase
 
+instalar o Redux 
+
+    npm install react-redux
+
 
