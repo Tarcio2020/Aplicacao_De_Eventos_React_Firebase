@@ -6,21 +6,28 @@ import Navbar from '../../components/navbar';
 import firebase from '../../config/firebase';
 import 'firebase/auth';
 
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
+
+
 function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [msgTipo, setMsgTipo] = useState('');
 
+    const dispacth = useDispacth();
 
     function logar() {
         firebase.auth().signInWithEmailAndPassword(email, senha).then(resultado => {
-            setMsgTipo('sucesso')
+            setMsgTipo('sucesso');
+            dispacth({type: 'LOG_IN', usuarioEmail: email});
         }).catch(erro => {
             setMsgTipo('erro')
-
-        })
+        });
     }
-
+    alert(useSelector(state => state.usuarioEmail));
+    
     return(
         <>
             <Navbar/>
