@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import './login.css';
 import {Link, Redirect} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import Navbar from '../../components/navbar';
 import firebase from '../../config/firebase';
 import 'firebase/auth';
+
 
 import {useSelector, useDispatch} from 'react-redux';
 
@@ -13,7 +16,7 @@ function Login() {
     const [msgTipo, setMsgTipo] = useState('');
     
     const dispatch = useDispatch(); 
-
+    const navigate = useNavigate(); 
     function logar() {
         firebase.auth().signInWithEmailAndPassword(email, senha).then(resultado => {
             setMsgTipo('sucesso');
@@ -29,7 +32,8 @@ function Login() {
     return (
         <>
             <Navbar />
-            {useSelector(state => state.usuarioLogado) ? <Redirect to="/" /> : null}
+            {useSelector(state => state.usuarioLogado) && navigate('/')}
+
             <div className='login-content d-flex align-items-center'>
                 <form className='form-signin mx-auto'>
                     <h1 className="h3 mb-3 fw-normal text-black font-weigth-bold text-center"><i className="fa-regular fa-user"></i> Login</h1>
