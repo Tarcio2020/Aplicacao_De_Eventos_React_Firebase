@@ -18,13 +18,12 @@ function Navbar() {
                                 useSelector(state => state.usuarioLogado) > 0 ?
 
                         <>
-                        <li className="nav-item"><Link className="nav-link" aria-current="page" to='/NovoUsuario'>Publicar Eventos</Link></li>
+                        <li className="nav-item"><Link className="nav-link" aria-current="page" to='/eventocadastro'>Publicar Eventos</Link></li>
                         <li className="nav-item"><Link className="nav-link" aria-current="page" to='/NovoUsuario'>Meus Eventos</Link></li>
                         <li className="nav-item"><Link className="nav-link" aria-current="page" to='/login'>Sair</Link></li>
                         </>
                         :
                         <>
-                        <li className="nav-item"><Link className="nav-link" aria-current="page" to='/NovoUsuario'>Cadastrar</Link></li>
                         <li className="nav-item"><Link className="nav-link" aria-current="page" to='/login'>Login</Link></li>
                         </>
                     }
