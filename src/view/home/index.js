@@ -32,9 +32,7 @@ function Home() {
             <h1>{useSelector(state => state.usuarioEmail)}</h1>
             <h1>Logado: {useSelector(state => state.usuarioLogado)}</h1>
             <div className='row'>
-                {eventos.map(item => <EventoCard/>) }
-               
-  
+                {eventos.map(item => <EventoCard key={item.id} img={item.foto} titulo={item.titulo} detalhes={item.detalhes} visualizacoes={item.visualizacoes}/>)}
             </div>
         </>
     )
