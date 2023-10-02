@@ -9,7 +9,7 @@ function EventoCard({ id, img, titulo, detalhes, visualizacoes }) {
 
     useEffect(() => {
         firebase.storage().ref(`imagens/${img}`).getDownloadURL().then(url => setUrlImagem(url));
-    }, [img]); // Adicionei [img] como dependência para evitar loops infinitos
+    }, [urlImagem]); // Adicionei [img] como dependência para evitar loops infinitos
 
     return (
         <div className='col-md-3 col-sm-12'>
@@ -21,10 +21,10 @@ function EventoCard({ id, img, titulo, detalhes, visualizacoes }) {
                 </p>
                 <div className='row rodape-card d-flex align-items-center'>
                     <div className='col-6'>
-                        <Link to='/' className='btn btn-sm btn-detalhes'>+Detalhes</Link>
+                        <Link to={/eventodetalhes/+id} className='btn btn-sm btn-detalhes'>+Detalhes</Link>
                     </div>
                     <div className='col-6 text-right'>
-                        <i className='fas fa-eye'></i><span>{visualizacoes}</span>
+                        <i className='fas fa-eye'></i> <span> {visualizacoes}</span>
                     </div>
                 </div>
             </div>
