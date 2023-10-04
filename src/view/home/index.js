@@ -34,6 +34,7 @@ function Home() {
             <Navbar />
 
             <div id='pesquisarCard' className='row my-5 px-5'>
+                <h2 className='mx-auto pb-2'>Eventos Publicados</h2>
                 <input onChange={(e) => setPesquisa(e.target.value)} type='text' className='form-control text-center' placeholder='Pesquisar Evento pelo Título...'/>
             </div>
             <div className='row mt-3 p-3'>
