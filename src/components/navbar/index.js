@@ -19,7 +19,7 @@ function Navbar() {
 
                         <>
                         <li className="nav-item"><Link className="nav-link" aria-current="page" to='/eventocadastro'>Publicar Eventos</Link></li>
-                        <li className="nav-item"><Link className="nav-link" aria-current="page" to='/NovoUsuario'>Meus Eventos</Link></li>
+                        <li className="nav-item"><Link className="nav-link" aria-current="page" to='/eventos/meus'>Meus Eventos</Link></li>
                         <li className="nav-item"><Link className="nav-link" aria-current="page" to='/login'>Sair</Link></li>
                         </>
                         :

@@ -31,5 +31,4 @@ function EventoCard({ id, img, titulo, detalhes, visualizacoes }) {
         </div>
     );
 }
-
 export default EventoCard;

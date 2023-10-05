@@ -5,6 +5,8 @@ import Navbar from '../../components/navbar';
 import { useSelector } from 'react-redux';
 import EventoCard from '../../components/evento-card/';
 import firebase from '../../config/firebase';
+import { withRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 function Home() {
 
@@ -13,32 +15,46 @@ function Home() {
     let listaeventos = [];
 
     useEffect(() => {
-        firebase.firestore().collection('eventos').get().then(async (resultado) => {
-            await resultado.docs.forEach(doc => {
-                if(doc.data().titulo.indexOf(pesquisa) >= 0)
-                {
-                listaeventos.push({
-                    id: doc.id,
-                    ...doc.data()
+
+        if(match.params.parametro){
+            firebase.firestore().collection('eventos').get().then(async (resultado) => {
+                await resultado.docs.forEach(doc => {
+                    if(doc.data().titulo.indexOf(pesquisa) >= 0)
+                        {
+                        listaeventos.push({
+                            id: doc.id,
+                            ...doc.data()
+                        })
+                    }
                 })
-                }
+                setEventos(listaeventos)
+            })
+        }else{
+            firebase.firestore().collection('eventos').get().then(async (resultado) => {
+                await resultado.docs.forEach(doc => {
+                    if(doc.data().titulo.indexOf(pesquisa) >= 0)
+                        {
+                        listaeventos.push({
+                            id: doc.id,
+                            ...doc.data()
+                        })
+                    }
+                })
+                setEventos(listaeventos)
             })
 
-            setEventos(listaeventos)
-        })
+        }
     })
 
 
     return(
         <>
             <Navbar />
-
-            <div id='pesquisarCard' className='row my-5 px-5'>
-                <h2 className='mx-auto pb-2'>Eventos Publicados</h2>
+            <div className='row p-5'>
+                <h2 className='text-center pb-5'>Eventos Publicados</h2>
                 <input onChange={(e) => setPesquisa(e.target.value)} type='text' className='form-control text-center' placeholder='Pesquisar Evento pelo Título...'/>
             </div>
             <div className='row mt-3 p-3'>
-
                 {eventos.map(item => <EventoCard key={item.id} id={item.id} img={item.foto} titulo={item.titulo} detalhes={item.detalhes} visualizacoes={item.visualizacoes}/>)}
             </div>
         </>
