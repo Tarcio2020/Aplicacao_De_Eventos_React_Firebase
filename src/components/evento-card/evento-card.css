@@ -1,0 +1,18 @@
+.rodape-card {
+    color: blueviolet
+}
+.btn-detalhes{
+    background-color: blueviolet;
+    color: aliceblue;
+}
+.btn-detalhes:hover {
+    background-color: #f21667;
+    color: aliceblue;
+}
+.card-text {
+    max-height: 200px;
+    overflow: hidden;
+}
+.img-cartao {
+    max-height: 200px;
+}
